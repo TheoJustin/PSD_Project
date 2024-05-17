@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Navbar.master.cs" Inherits="ProjectPSD.Layout.Navbar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>RAiso Website</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- haven't logged in -->
+            <hr />
+            <h3>RAiso Website</h3>
+            <asp:Button ID="Home" runat="server" Text="Home" OnClick="Home_Click" />
+            <asp:Button ID="Login" runat="server" Text="Login" OnClick="Login_Click"/>
+            <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click"/>
+            <asp:Button ID="Cart" runat="server" Text="Cart" OnClick="Cart_Click"/>
+            <asp:Button ID="Transaction" runat="server" Text="Transaction" OnClick="Transaction_Click"/>
+            <asp:Button ID="UpdateProfile" runat="server" Text="UpdateProfile" OnClick="UpdateProfile_Click"/>
+            <asp:Button ID="Logout" runat="server" Text="Logout" OnClick="Logout_Click"/>
+            <hr />
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
