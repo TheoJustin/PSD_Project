@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml.Linq;
 
 namespace ProjectPSD.Handlers
 {
@@ -66,7 +67,36 @@ namespace ProjectPSD.Handlers
                 UserRepository.addUser(user);
 
 
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
+                {
+                    Success = true,
+                    Message = "",
+                    Payload = null
+                };
+            }
+        }
+
+        public static Response<MsUser> HandleLogin(string username, string password, bool rememberMe)
+        {
+            if (UserRepository.CheckUserLogin(username, password) == null)
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "Username or password is incorrect",
+                    Payload = null
+                };
+            }else
+            {
+                if (rememberMe)
+                {
+                    HttpCookie cookie = new HttpCookie("UserInfo");
+                    cookie["Username"] = username;
+                    cookie.Expires = DateTime.Now.AddHours(1);
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+                }
+
+                return new Response<MsUser>()
                 {
                     Success = true,
                     Message = "",

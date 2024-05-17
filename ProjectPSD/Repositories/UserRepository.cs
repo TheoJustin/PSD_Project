@@ -26,6 +26,19 @@ namespace ProjectPSD.Repositories
             return newID;
         }
 
+        public static MsUser CheckUserLogin(string userName, string password)
+        {
+            MsUser user = (from x in db.MsUsers where x.UserName.Equals(userName) select x).FirstOrDefault();
+            if(user.UserPassword == password)
+            {
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static void addUser(MsUser user)
         {
             db.MsUsers.Add(user);

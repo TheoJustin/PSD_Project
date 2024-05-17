@@ -8,7 +8,7 @@ namespace ProjectPSD.Factories
 {
     public class UserFactory
     {
-        public static MsUser Create(int userId, string userName, string userGender, DateTime userDob, string userPhone, string userAddress, string userPassword, string userRole)
+        public static MsUser Create(int userId, string userName, string userGender, DateTime userDob, string userPhone,  string userPassword, string userAddress, string userRole)
         {
             MsUser user = new MsUser();
             user.UserID = userId;

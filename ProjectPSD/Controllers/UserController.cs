@@ -4,7 +4,10 @@ using ProjectPSD.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Security.Policy;
 using System.Web;
+using System.Xml.Linq;
 
 namespace ProjectPSD.Controllers
 {
@@ -56,6 +59,32 @@ namespace ProjectPSD.Controllers
             else
             {
                 return UserHandler.HandleRegister(name, dob, gender, address, password, phone);
+            }
+        }
+
+        public static Response<MsUser> ValidateLogin(string username, string password, bool rememberMe)
+        {
+            if (username == "")
+            {
+                return new Response<Models.MsUser>()
+                {
+                    Success = false,
+                    Message = "Username must be filled",
+                    Payload = null
+                };
+            }
+            else if (password == "")
+            {
+                return new Response<Models.MsUser>()
+                {
+                    Success = false,
+                    Message = "Password must be filled",
+                    Payload = null
+                };
+            }
+            else
+            {
+                return UserHandler.HandleLogin(username, password, rememberMe);
             }
         }
     }
