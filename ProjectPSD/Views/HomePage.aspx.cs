@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ProjectPSD.Controllers;
+using ProjectPSD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,7 +14,21 @@ namespace ProjectPSD.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<MsStationery> msStationeries = StationeryController.ReadStationery();
+            StationeryGV.DataSource = msStationeries;
+            StationeryGV.DataBind();
+        }
 
+        protected void UpdateRow(object sender, GridViewEditEventArgs e)
+        {
+            GridViewRow row = StationeryGV.Rows[e.NewEditIndex];
+            String index = row.Cells[0].Text;
+            Response.Redirect("~/Views/StationeryDetail.aspx?id=" + index);
+        }
+
+        protected void InsertBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/InsertStationery.aspx");
         }
     }
 }
