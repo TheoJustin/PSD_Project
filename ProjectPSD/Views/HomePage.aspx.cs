@@ -28,7 +28,14 @@ namespace ProjectPSD.Views
 
         protected void InsertBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/InsertStationery.aspx");
+            Response.Redirect("~/Views/InsertStationeryPage.aspx");
+        }
+
+        protected void StationeryGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = StationeryGV.SelectedRow;
+            string stationeryId = row.Cells[0].Text;
+            Response.Redirect($"~/Views/StationeryDetail.aspx?id={stationeryId}");
         }
     }
 }
