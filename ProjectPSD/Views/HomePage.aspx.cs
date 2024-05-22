@@ -23,7 +23,7 @@ namespace ProjectPSD.Views
         {
             GridViewRow row = StationeryGV.Rows[e.NewEditIndex];
             String index = row.Cells[0].Text;
-            Response.Redirect("~/Views/StationeryDetail.aspx?id=" + index);
+            Response.Redirect("~/Views/UpdateStationeryPage.aspx?id=" + index);
         }
 
         protected void InsertBtn_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace ProjectPSD.Views
         {
             GridViewRow row = StationeryGV.SelectedRow;
             string stationeryId = row.Cells[0].Text;
-            Response.Redirect($"~/Views/StationeryDetail.aspx?id={stationeryId}");
+            Response.Redirect($"~/Views/StationeryDetailPage.aspx?id={stationeryId}");
         }
     }
 }

@@ -87,5 +87,11 @@ namespace ProjectPSD.Controllers
                 return UserHandler.HandleLogin(username, password, rememberMe);
             }
         }
+
+
+        public static MsUser ReadUserByName(string name)
+        {
+            return UserHandler.HandleReadUserByName(name);
+        }
     }
 }

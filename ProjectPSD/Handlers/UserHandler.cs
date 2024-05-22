@@ -92,7 +92,16 @@ namespace ProjectPSD.Handlers
                 {
                     HttpCookie cookie = new HttpCookie("UserInfo");
                     cookie["Username"] = username;
+                    cookie["Password"] = password;
                     cookie.Expires = DateTime.Now.AddHours(1);
+                    HttpContext.Current.Response.Cookies.Add(cookie);
+                }
+                else
+                {
+                    HttpCookie cookie = new HttpCookie("UserInfo");
+                    cookie["Username"] = username;
+                    cookie["Password"] = password;
+                    cookie.Expires = DateTime.Now.AddMinutes(10);
                     HttpContext.Current.Response.Cookies.Add(cookie);
                 }
 
@@ -103,6 +112,11 @@ namespace ProjectPSD.Handlers
                     Payload = null
                 };
             }
+        }
+
+        public static MsUser HandleReadUserByName(string name)
+        {
+            return UserRepository.GetUserByName(name);
         }
     }
 }

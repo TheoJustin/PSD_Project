@@ -94,13 +94,15 @@
     <Content Include="Views\InsertStationeryPage.aspx" />
     <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
-    <Content Include="Views\StationeryDetail.aspx" />
+    <Content Include="Views\StationeryDetailPage.aspx" />
     <Content Include="Views\TransactionPage.aspx" />
+    <Content Include="Views\UpdateCartPage.aspx" />
     <Content Include="Views\UpdateProfilePage.aspx" />
     <Content Include="Views\UpdateStationeryPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\StationeryController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Factories\CartFactory.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="Factories\TransactionDetailFactory.cs" />
     <Compile Include="Factories\TransactionHeaderFactory.cs" />
     <Compile Include="Factories\UserFactory.cs" />
+    <Compile Include="Handlers\CartHandler.cs" />
     <Compile Include="Handlers\StationeryHandler.cs" />
     <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Layout\Navbar.Master.cs">
@@ -149,6 +152,7 @@
     </Compile>
     <Compile Include="Modules\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CartRepository.cs" />
     <Compile Include="Repositories\DBSingleton.cs" />
     <Compile Include="Repositories\StationeryRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -187,12 +191,12 @@
     <Compile Include="Views\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\StationeryDetail.aspx.cs">
-      <DependentUpon>StationeryDetail.aspx</DependentUpon>
+    <Compile Include="Views\StationeryDetailPage.aspx.cs">
+      <DependentUpon>StationeryDetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\StationeryDetail.aspx.designer.cs">
-      <DependentUpon>StationeryDetail.aspx</DependentUpon>
+    <Compile Include="Views\StationeryDetailPage.aspx.designer.cs">
+      <DependentUpon>StationeryDetailPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\TransactionPage.aspx.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>
@@ -200,6 +204,13 @@
     </Compile>
     <Compile Include="Views\TransactionPage.aspx.designer.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateCartPage.aspx.cs">
+      <DependentUpon>UpdateCartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\UpdateCartPage.aspx.designer.cs">
+      <DependentUpon>UpdateCartPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\UpdateProfilePage.aspx.cs">
       <DependentUpon>UpdateProfilePage.aspx</DependentUpon>

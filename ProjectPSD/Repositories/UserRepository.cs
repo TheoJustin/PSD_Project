@@ -39,6 +39,12 @@ namespace ProjectPSD.Repositories
             }
         }
 
+        public static MsUser GetUserByName(string name) 
+        {
+            MsUser user = (from x in db.MsUsers where x.UserName.Equals(name) select x).FirstOrDefault();
+            return user;
+        }
+
         public static void addUser(MsUser user)
         {
             db.MsUsers.Add(user);

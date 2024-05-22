@@ -3,48 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\homepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\homepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|C:\\Users\\theo\\source\\repos\\ProjectPSD\\projectpsd\\views\\cartpage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\cartpage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|C:\\Users\\theo\\source\\repos\\ProjectPSD\\projectpsd\\views\\homepage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\homepage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\cartpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\cartpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\updatestationerypage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\updatestationerypage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\updatecartpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\updatecartpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|C:\\Users\\theo\\source\\repos\\ProjectPSD\\projectpsd\\repositories\\stationeryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\repositories\\stationeryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\insertstationerypage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\insertstationerypage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\loginpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\loginpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\registerpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\registerpage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\insertstationerypage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\insertstationerypage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\stationerydetail.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\stationerydetail.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|c:\\users\\theo\\source\\repos\\projectpsd\\projectpsd\\views\\insertstationerypage.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\views\\insertstationerypage.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|C:\\Users\\theo\\source\\repos\\ProjectPSD\\projectpsd\\handlers\\stationeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\handlers\\stationeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|C:\\Users\\theo\\source\\repos\\ProjectPSD\\projectpsd\\handlers\\carthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F37615F6-9DC3-4665-BC3B-13E51B2C5041}|ProjectPSD\\ProjectPSD.csproj|solutionrelative:projectpsd\\handlers\\carthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,149 +26,58 @@
       "DocumentGroups": [
         {
           "DockedHeight": 302,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomePage.aspx",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\HomePage.aspx",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\HomePage.aspx",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\HomePage.aspx",
-              "RelativeToolTip": "ProjectPSD\\Views\\HomePage.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-21T09:27:24.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UpdateStationeryPage.aspx",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\UpdateStationeryPage.aspx",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\UpdateStationeryPage.aspx",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\UpdateStationeryPage.aspx",
-              "RelativeToolTip": "ProjectPSD\\Views\\UpdateStationeryPage.aspx",
+              "Title": "UpdateCartPage.aspx",
+              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\UpdateCartPage.aspx",
+              "RelativeDocumentMoniker": "ProjectPSD\\Views\\UpdateCartPage.aspx",
+              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\UpdateCartPage.aspx",
+              "RelativeToolTip": "ProjectPSD\\Views\\UpdateCartPage.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-21T09:23:49.867Z",
+              "WhenOpened": "2024-05-22T11:30:32.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "StationeryDetail.aspx",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\StationeryDetail.aspx",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\StationeryDetail.aspx",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\StationeryDetail.aspx",
-              "RelativeToolTip": "ProjectPSD\\Views\\StationeryDetail.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-21T09:22:22.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterPage.aspx",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\RegisterPage.aspx",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\RegisterPage.aspx",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\RegisterPage.aspx",
-              "RelativeToolTip": "ProjectPSD\\Views\\RegisterPage.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-21T09:22:17.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginPage.aspx",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\LoginPage.aspx",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\LoginPage.aspx",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\LoginPage.aspx",
-              "RelativeToolTip": "ProjectPSD\\Views\\LoginPage.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-21T09:22:11.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "InsertStationeryPage.aspx.designer.cs",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\InsertStationeryPage.aspx.designer.cs",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\InsertStationeryPage.aspx.designer.cs",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\InsertStationeryPage.aspx.designer.cs",
-              "RelativeToolTip": "ProjectPSD\\Views\\InsertStationeryPage.aspx.designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "CartPage.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\CartPage.aspx.cs",
+              "RelativeDocumentMoniker": "ProjectPSD\\Views\\CartPage.aspx.cs",
+              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\CartPage.aspx.cs",
+              "RelativeToolTip": "ProjectPSD\\Views\\CartPage.aspx.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T09:02:05.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "InsertStationeryPage.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\InsertStationeryPage.aspx.cs",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\InsertStationeryPage.aspx.cs",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\InsertStationeryPage.aspx.cs",
-              "RelativeToolTip": "ProjectPSD\\Views\\InsertStationeryPage.aspx.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T08:55:34.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "InsertStationeryPage.aspx",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\InsertStationeryPage.aspx",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\InsertStationeryPage.aspx",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\InsertStationeryPage.aspx",
-              "RelativeToolTip": "ProjectPSD\\Views\\InsertStationeryPage.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-05-21T08:55:17.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "StationeryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Handlers\\StationeryHandler.cs",
-              "RelativeDocumentMoniker": "ProjectPSD\\Handlers\\StationeryHandler.cs",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Handlers\\StationeryHandler.cs",
-              "RelativeToolTip": "ProjectPSD\\Handlers\\StationeryHandler.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAkwCEAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T08:17:36.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StationeryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Repositories\\StationeryRepository.cs",
-              "RelativeDocumentMoniker": "ProjectPSD\\Repositories\\StationeryRepository.cs",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Repositories\\StationeryRepository.cs",
-              "RelativeToolTip": "ProjectPSD\\Repositories\\StationeryRepository.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAgwCwAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T08:17:18.751Z",
+              "WhenOpened": "2024-05-22T11:18:01.191Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomePage.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\HomePage.aspx.cs",
-              "RelativeDocumentMoniker": "ProjectPSD\\Views\\HomePage.aspx.cs",
-              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\HomePage.aspx.cs",
-              "RelativeToolTip": "ProjectPSD\\Views\\HomePage.aspx.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAD4vxsAAAAAAAAA",
+              "Title": "CartPage.aspx",
+              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\CartPage.aspx",
+              "RelativeDocumentMoniker": "ProjectPSD\\Views\\CartPage.aspx",
+              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Views\\CartPage.aspx",
+              "RelativeToolTip": "ProjectPSD\\Views\\CartPage.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-22T11:17:46.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartHandler.cs",
+              "DocumentMoniker": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Handlers\\CartHandler.cs",
+              "RelativeDocumentMoniker": "ProjectPSD\\Handlers\\CartHandler.cs",
+              "ToolTip": "C:\\Users\\theo\\source\\repos\\ProjectPSD\\ProjectPSD\\Handlers\\CartHandler.cs",
+              "RelativeToolTip": "ProjectPSD\\Handlers\\CartHandler.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAApwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T03:30:01.811Z",
+              "WhenOpened": "2024-05-22T10:53:43.634Z",
               "EditorCaption": ""
             }
           ]

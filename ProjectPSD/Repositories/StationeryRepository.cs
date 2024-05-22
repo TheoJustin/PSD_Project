@@ -15,9 +15,9 @@ namespace ProjectPSD.Repositories
             return db.MsStationeries.ToList();
         }
 
-        public static MsStationery GetStationeryByID(String id)
+        public static MsStationery GetStationeryByID(int id)
         {
-            MsStationery stationery = db.MsStationeries.Find(Int32.Parse(id));
+            MsStationery stationery = db.MsStationeries.Find(id);
             return stationery;
         }
 
@@ -42,6 +42,14 @@ namespace ProjectPSD.Repositories
         {
             MsStationery stationery = MsStationeryFactory.Create(id, name, price);
             db.MsStationeries.Add(stationery);
+            db.SaveChanges();
+        }
+
+        public static void UpdateStationeryByID(int id, String name, int price)
+        {
+            MsStationery stationery = GetStationeryByID(id);
+            stationery.StationeryName = name;
+            stationery.StationeryPrice = price;
             db.SaveChanges();
         }
     }
