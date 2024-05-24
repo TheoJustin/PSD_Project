@@ -1,6 +1,7 @@
 ﻿using ProjectPSD.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 
@@ -29,7 +30,7 @@ namespace ProjectPSD.Repositories
         public static MsUser CheckUserLogin(string userName, string password)
         {
             MsUser user = (from x in db.MsUsers where x.UserName.Equals(userName) select x).FirstOrDefault();
-            if(user.UserPassword == password)   
+            if(user != null && user.UserPassword == password)   
             {
                 return user;
             }
@@ -48,7 +49,15 @@ namespace ProjectPSD.Repositories
         public static void addUser(MsUser user)
         {
             db.MsUsers.Add(user);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+
+            }
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

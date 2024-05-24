@@ -13,9 +13,9 @@ namespace ProjectPSD.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
-                HttpCookie userCookie = Request.Cookies["UserInfo"];
+                HttpCookie userCookie = Request.Cookies["User_Cookie"];
 
                 if (userCookie != null)
                 {
@@ -34,14 +34,19 @@ namespace ProjectPSD.Views
 
         protected void CartGV_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            GridViewRow row = CartGV.Rows[e.NewEditIndex];
-            String sid = row.Cells[1].Text;
-            Response.Redirect("~/Views/UpdateCartPage.aspx?sid=" + sid);
+            //Cart cart = row.DataItem as Cart;
+            String sid = CartGV.DataKeys[e.NewEditIndex]["StationeryId"].ToString();
+            String uid = CartGV.DataKeys[e.NewEditIndex]["UserId"].ToString();
+            debug.Text = sid + uid;
+            Response.Redirect("~/Views/UpdateCartPage.aspx?sid=" + sid + "&uid=" + uid);
         }
 
         protected void CartGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            String sid = CartGV.DataKeys[e.RowIndex]["StationeryId"].ToString();
+            String uid = CartGV.DataKeys[e.RowIndex]["UserId"].ToString();
+            CartController.ControlRemoveFromCart(uid, sid);
+            Response.Redirect("~/Views/CartPage.aspx");
         }
     }
 }

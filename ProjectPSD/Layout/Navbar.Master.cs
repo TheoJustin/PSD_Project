@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectPSD.Controllers;
+using ProjectPSD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,38 @@ namespace ProjectPSD.Layout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie cookie = Request.Cookies["User_Cookie"];
+            if (cookie != null)
+            {
+                MsUser user = UserController.ReadUserByName(cookie["Username"]);
+                if (user.UserRole == "customer")
+                {
+                    Login.Visible = false;
+                    Register.Visible = false;
+                    Cart.Visible = true;
+                    Transaction.Visible = true;
+                    UpdateProfile.Visible = true;
+                    Logout.Visible = true;
+                }
+                else if(user.UserRole == "admin")
+                {
+                    Login.Visible = false;
+                    Register.Visible = false;
+                    Cart.Visible = false;
+                    Transaction.Visible = true;
+                    UpdateProfile.Visible = true;
+                    Logout.Visible = true;
+                }
+            }
+            else
+            {
+                Login.Visible = true;
+                Register.Visible = true;
+                Cart.Visible = false;
+                Transaction.Visible = false;
+                UpdateProfile.Visible = false;
+                Logout.Visible = false;
+            }
         }
 
         protected void Home_Click(object sender, EventArgs e)

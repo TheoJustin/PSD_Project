@@ -17,6 +17,21 @@ namespace ProjectPSD.Views
             List<MsStationery> msStationeries = StationeryController.ReadStationery();
             StationeryGV.DataSource = msStationeries;
             StationeryGV.DataBind();
+            HttpCookie cookie = Request.Cookies["User_Cookie"];
+            if (cookie != null)
+            {
+                MsUser user = UserController.ReadUserByName(cookie["Username"]);
+                if (user == null || user.UserRole != "admin")
+                {
+                    InsertBtn.Visible = false;
+                    StationeryGV.Columns[3].Visible = false;
+                }
+                else
+                {
+                    InsertBtn.Visible = true;
+                    StationeryGV.Columns[3].Visible = true;
+                }
+            }
         }
 
         protected void UpdateRow(object sender, GridViewEditEventArgs e)

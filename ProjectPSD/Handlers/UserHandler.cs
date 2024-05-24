@@ -63,7 +63,7 @@ namespace ProjectPSD.Handlers
             }
             else
             {
-                MsUser user = UserFactory.Create(UserRepository.GenerateUserID(), name, gender, dateOfBirth, address, password, phone, "customer");
+                MsUser user = UserFactory.Create(UserRepository.GenerateUserID(), name, gender, dateOfBirth, phone, password, address, "customer");
                 UserRepository.addUser(user);
 
 

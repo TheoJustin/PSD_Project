@@ -17,6 +17,7 @@ namespace ProjectPSD.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MsUser()
         {
+            this.Cart = new HashSet<Cart>();
             this.TransactionHeaders = new HashSet<TransactionHeader>();
         }
     
@@ -29,7 +30,8 @@ namespace ProjectPSD.Models
         public string UserPassword { get; set; }
         public string UserRole { get; set; }
     
-        public virtual Cart Cart { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Cart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TransactionHeader> TransactionHeaders { get; set; }
     }

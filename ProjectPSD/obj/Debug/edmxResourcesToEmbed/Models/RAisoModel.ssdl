@@ -3,6 +3,7 @@
   <EntityType Name="Cart">
     <Key>
       <PropertyRef Name="UserID" />
+      <PropertyRef Name="StationeryID" />
     </Key>
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="StationeryID" Type="int" Nullable="false" />
@@ -32,6 +33,7 @@
   <EntityType Name="TransactionDetail">
     <Key>
       <PropertyRef Name="TransactionID" />
+      <PropertyRef Name="StationeryID" />
     </Key>
     <Property Name="TransactionID" Type="int" Nullable="false" />
     <Property Name="StationeryID" Type="int" Nullable="false" />
@@ -59,7 +61,7 @@
   </Association>
   <Association Name="FK_Cart_MsUser">
     <End Role="MsUser" Type="Self.MsUser" Multiplicity="1" />
-    <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MsUser">
         <PropertyRef Name="UserID" />
@@ -83,7 +85,7 @@
   </Association>
   <Association Name="FK_TransactionDetail_TransactionHeader">
     <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="1" />
-    <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="0..1" />
+    <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TransactionHeader">
         <PropertyRef Name="TransactionID" />

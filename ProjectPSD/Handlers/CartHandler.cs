@@ -4,6 +4,7 @@ using ProjectPSD.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 
 namespace ProjectPSD.Handlers
@@ -47,6 +48,38 @@ namespace ProjectPSD.Handlers
             }
 
             return returnCart;
+        }
+
+        public static Cart HandleCartByID(String uid, String sid)
+        {
+            return CartRepository.GetCartByID(Int32.Parse(uid), Int32.Parse(sid));
+        }
+
+        public static Response<Cart> HandleCartUpdate(int uid, int sid, int qty)
+        {
+            if (qty <= 0)
+            {
+                return new Response<Cart>()
+                {
+                    Success = false,
+                    Message = "Quantity must be more than 0",
+                    Payload = null
+                };
+            }
+            else
+            {
+                CartRepository.UpdateCart(uid, sid, qty);
+                return new Response<Cart>()
+                {
+                    Success = true,
+                    Message = "",
+                    Payload = null
+                };
+            }
+        }
+        public static void HandleRemoveCart(int userID, int stationeryID)
+        {
+            CartRepository.RemoveCart(userID, stationeryID);
         }
     }
 }

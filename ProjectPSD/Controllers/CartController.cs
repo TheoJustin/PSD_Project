@@ -33,5 +33,29 @@ namespace ProjectPSD.Controllers
         {
             return CartHandler.HandleAllCartsByUser(uid);
         }
+
+        public static Cart ReadCartById(String uid, String sid)
+        {
+            return CartHandler.HandleCartByID(uid, sid);
+        }
+
+        public static Response<Cart> ValidateCartUpdate(int uid, int sid, string qty)
+        {
+            if(qty == "" || !int.TryParse(qty, out int number))
+            {
+                return new Response<Cart>()
+                {
+                    Success = false,
+                    Message = "Quantity should be an integer and it cannot be empty",
+                    Payload = null
+                };
+            }
+            int qtyInt = Convert.ToInt32(qty);
+            return CartHandler.HandleCartUpdate(uid, sid, qtyInt);
+        }
+        public static void ControlRemoveFromCart(String userID, String stationeryID)
+        {
+            CartHandler.HandleRemoveCart(Convert.ToInt32(userID), Convert.ToInt32(stationeryID));
+        }
     }
 }

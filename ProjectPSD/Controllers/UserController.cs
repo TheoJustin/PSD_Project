@@ -15,9 +15,9 @@ namespace ProjectPSD.Controllers
     {
         public static Response<MsUser> ValidateRegister(String name, String dob, String gender, String address, String password, String phone)
         {
-            if (name == "" || !(name.Length > 5 && name.Length < 50))
+            if (name == "" || !(name.Length >= 5 && name.Length <= 50))
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "Name must be filled, between 5 and 50 characters",
@@ -25,7 +25,7 @@ namespace ProjectPSD.Controllers
                 };
             }else if (dob == "")
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "DOB must be filled",
@@ -33,7 +33,7 @@ namespace ProjectPSD.Controllers
                 };
             }else if (gender == "")
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "gender must be filled",
@@ -41,7 +41,7 @@ namespace ProjectPSD.Controllers
                 };
             }else if (password == "")
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "password must be filled",
@@ -49,7 +49,7 @@ namespace ProjectPSD.Controllers
                 };
             }else if (phone == "")
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "phone must be filled",
@@ -66,7 +66,7 @@ namespace ProjectPSD.Controllers
         {
             if (username == "")
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "Username must be filled",
@@ -75,7 +75,7 @@ namespace ProjectPSD.Controllers
             }
             else if (password == "")
             {
-                return new Response<Models.MsUser>()
+                return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "Password must be filled",

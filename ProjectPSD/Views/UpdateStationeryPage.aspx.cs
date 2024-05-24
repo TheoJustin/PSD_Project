@@ -18,7 +18,16 @@ namespace ProjectPSD.Views
 
             if (!IsPostBack)
             {
+                HttpCookie cookie = Request.Cookies["User_Cookie"];
                 String id = Request.QueryString["id"];
+                if (cookie != null)
+                {
+                    MsUser user = UserController.ReadUserByName(cookie["Username"]);
+                    if (user == null || user.UserRole != "admin" || id == null)
+                    {
+                        Response.Redirect("~/Views/HomePage.aspx");
+                    }
+                }
                 MsStationery msStationery = StationeryController.ReadStationeryById(id);
 
                 if (msStationery != null)

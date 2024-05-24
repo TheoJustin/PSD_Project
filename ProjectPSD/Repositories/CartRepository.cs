@@ -23,5 +23,23 @@ namespace ProjectPSD.Repositories
         {
             return db.Carts.ToList();
         }
+
+        public static Cart GetCartByID(int uid, int sid)
+        {
+            return db.Carts.Where(cart => cart.UserID == uid && cart.StationeryID == sid).FirstOrDefault();
+        }
+
+        public static void UpdateCart(int userID, int stationeryID, int quantity)
+        {
+            Cart cart = GetCartByID(userID, stationeryID);
+            cart.Quantity = quantity;
+            db.SaveChanges();
+        }
+        public static void RemoveCart(int userID, int stationeryID)
+        {
+            Cart cart = GetCartByID(userID, stationeryID);
+            db.Carts.Remove(cart);
+            db.SaveChanges();
+        }
     }
 }

@@ -52,5 +52,7 @@ namespace ProjectPSD.Repositories
             stationery.StationeryPrice = price;
             db.SaveChanges();
         }
+
+        
     }
 }

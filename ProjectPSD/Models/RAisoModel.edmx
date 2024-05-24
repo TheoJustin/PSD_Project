@@ -4,10 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RAisoDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RAisoDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="UserID" />
+            <PropertyRef Name="StationeryID" />
           </Key>
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="StationeryID" Type="int" Nullable="false" />
@@ -37,6 +38,7 @@
         <EntityType Name="TransactionDetail">
           <Key>
             <PropertyRef Name="TransactionID" />
+            <PropertyRef Name="StationeryID" />
           </Key>
           <Property Name="TransactionID" Type="int" Nullable="false" />
           <Property Name="StationeryID" Type="int" Nullable="false" />
@@ -64,7 +66,7 @@
         </Association>
         <Association Name="FK_Cart_MsUser">
           <End Role="MsUser" Type="Self.MsUser" Multiplicity="1" />
-          <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MsUser">
               <PropertyRef Name="UserID" />
@@ -88,7 +90,7 @@
         </Association>
         <Association Name="FK_TransactionDetail_TransactionHeader">
           <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="1" />
-          <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="0..1" />
+          <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TransactionHeader">
               <PropertyRef Name="TransactionID" />
@@ -137,14 +139,14 @@
             <End Role="TransactionHeader" EntitySet="TransactionHeader" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RAisoDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Cart">
           <Key>
             <PropertyRef Name="UserID" />
+            <PropertyRef Name="StationeryID" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="StationeryID" Type="Int32" Nullable="false" />
@@ -180,6 +182,7 @@
         <EntityType Name="TransactionDetail">
           <Key>
             <PropertyRef Name="TransactionID" />
+            <PropertyRef Name="StationeryID" />
           </Key>
           <Property Name="TransactionID" Type="Int32" Nullable="false" />
           <Property Name="StationeryID" Type="Int32" Nullable="false" />
@@ -211,7 +214,7 @@
         </Association>
         <Association Name="FK_Cart_MsUser">
           <End Role="MsUser" Type="Self.MsUser" Multiplicity="1" />
-          <End Role="Cart" Type="Self.Cart" Multiplicity="0..1" />
+          <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MsUser">
               <PropertyRef Name="UserID" />
@@ -247,7 +250,7 @@
         </Association>
         <Association Name="FK_TransactionDetail_TransactionHeader">
           <End Role="TransactionHeader" Type="Self.TransactionHeader" Multiplicity="1" />
-          <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="0..1" />
+          <End Role="TransactionDetail" Type="Self.TransactionDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TransactionHeader">
               <PropertyRef Name="TransactionID" />
