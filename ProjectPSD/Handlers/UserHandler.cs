@@ -78,7 +78,8 @@ namespace ProjectPSD.Handlers
 
         public static Response<MsUser> HandleLogin(string username, string password, bool rememberMe)
         {
-            if (UserRepository.CheckUserLogin(username, password) == null)
+            MsUser user = UserRepository.CheckUserLogin(username, password);
+            if (user == null)
             {
                 return new Response<MsUser>()
                 {
@@ -90,7 +91,7 @@ namespace ProjectPSD.Handlers
             {
                 if (rememberMe)
                 {
-                    HttpCookie cookie = new HttpCookie("UserInfo");
+                    HttpCookie cookie = new HttpCookie("User_Cookie");
                     cookie["Username"] = username;
                     cookie["Password"] = password;
                     cookie.Expires = DateTime.Now.AddHours(1);
@@ -98,13 +99,13 @@ namespace ProjectPSD.Handlers
                 }
                 else
                 {
-                    HttpCookie cookie = new HttpCookie("UserInfo");
+                    HttpCookie cookie = new HttpCookie("User_Cookie");
                     cookie["Username"] = username;
                     cookie["Password"] = password;
                     cookie.Expires = DateTime.Now.AddMinutes(10);
                     HttpContext.Current.Response.Cookies.Add(cookie);
                 }
-
+                // HttpContext.Current.Session["User_Session"] = user;
                 return new Response<MsUser>()
                 {
                     Success = true,
@@ -118,5 +119,6 @@ namespace ProjectPSD.Handlers
         {
             return UserRepository.GetUserByName(name);
         }
+
     }
 }

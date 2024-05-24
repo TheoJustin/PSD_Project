@@ -17,6 +17,15 @@ namespace ProjectPSD.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HttpCookie cookie = Request.Cookies["User_Cookie"];
+            if (cookie != null)
+            {
+                MsUser user = UserController.ReadUserByName(cookie["Username"]);
+                if (user != null)
+                {
+                    Response.Redirect("~/Views/HomePage.aspx");
+                }
+            }
             errorMsg.ForeColor = System.Drawing.Color.Red;
         }
 

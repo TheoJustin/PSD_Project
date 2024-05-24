@@ -46,7 +46,8 @@ namespace ProjectPSD.Layout
 
         protected void Logout_Click(object sender, EventArgs e)
         {
-
+            Response.Cookies["User_Cookie"].Expires = DateTime.Now.AddDays(-1);
+            Response.Redirect("~/Views/LoginPage.aspx");
         }
     }
 }

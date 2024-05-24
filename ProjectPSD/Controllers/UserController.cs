@@ -89,9 +89,14 @@ namespace ProjectPSD.Controllers
         }
 
 
+
         public static MsUser ReadUserByName(string name)
         {
             return UserHandler.HandleReadUserByName(name);
+        }
+        public static MsUser ReadUserFromCookie(HttpCookie cookie)
+        {
+            return UserHandler.HandleReadUserByName(cookie["Username"]);
         }
     }
 }
