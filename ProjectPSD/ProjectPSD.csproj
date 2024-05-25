@@ -95,6 +95,7 @@
     <Content Include="Views\LoginPage.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
     <Content Include="Views\StationeryDetailPage.aspx" />
+    <Content Include="Views\TransactionDetailPage.aspx" />
     <Content Include="Views\TransactionPage.aspx" />
     <Content Include="Views\UpdateCartPage.aspx" />
     <Content Include="Views\UpdateProfilePage.aspx" />
@@ -104,6 +105,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\StationeryController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Factories\CartFactory.cs" />
     <Compile Include="Factories\MsStationeryFactory.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Handlers\CartHandler.cs" />
     <Compile Include="Handlers\StationeryHandler.cs" />
+    <Compile Include="Handlers\TransactionHandler.cs" />
     <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Layout\Navbar.Master.cs">
       <DependentUpon>Navbar.Master</DependentUpon>
@@ -155,6 +158,7 @@
     <Compile Include="Repositories\CartRepository.cs" />
     <Compile Include="Repositories\DBSingleton.cs" />
     <Compile Include="Repositories\StationeryRepository.cs" />
+    <Compile Include="Repositories\TransactionRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Views\CartPage.aspx.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
@@ -197,6 +201,13 @@
     </Compile>
     <Compile Include="Views\StationeryDetailPage.aspx.designer.cs">
       <DependentUpon>StationeryDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionDetailPage.aspx.cs">
+      <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TransactionDetailPage.aspx.designer.cs">
+      <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\TransactionPage.aspx.cs">
       <DependentUpon>TransactionPage.aspx</DependentUpon>

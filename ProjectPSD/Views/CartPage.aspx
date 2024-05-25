@@ -12,5 +12,8 @@
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ButtonType="Button" ShowHeader="True" HeaderText="Actions"></asp:CommandField>
         </Columns>
     </asp:GridView>
-    <asp:Label ID="debug" runat="server" Text=""></asp:Label>
+    <div style="color:red">
+        <asp:Label ID="ErrorMsg" runat="server" Text=""></asp:Label>
+    </div>
+    <asp:Button ID="CheckOutButton" runat="server" Text="Check Out" OnClick="CheckOutButton_Click" />
 </asp:Content>

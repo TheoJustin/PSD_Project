@@ -57,5 +57,11 @@ namespace ProjectPSD.Controllers
         {
             CartHandler.HandleRemoveCart(Convert.ToInt32(userID), Convert.ToInt32(stationeryID));
         }
+
+        public static Response<string> ControlCheckOut(int uid)
+        {
+            Response<string> response = CartHandler.HandleCartCheckOut(uid);
+            return response;
+        }
     }
 }

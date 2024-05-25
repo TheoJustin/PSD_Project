@@ -24,6 +24,18 @@ namespace ProjectPSD.Repositories
             return db.Carts.ToList();
         }
 
+        public static List<Cart> GetCartsByUser(int uid)
+        {
+            return db.Carts.Where(cart => cart.UserID == uid).ToList();
+        }
+
+        public static void DeleteAllUserCart(int uid)
+        {
+            List<Cart> userCarts = GetCartsByUser(uid);
+            db.Carts.RemoveRange(userCarts);
+            db.SaveChanges();
+        }
+
         public static Cart GetCartByID(int uid, int sid)
         {
             return db.Carts.Where(cart => cart.UserID == uid && cart.StationeryID == sid).FirstOrDefault();

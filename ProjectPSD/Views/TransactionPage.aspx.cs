@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectPSD.Controllers;
+using ProjectPSD.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,33 @@ namespace ProjectPSD.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                HttpCookie userCookie = Request.Cookies["User_Cookie"];
 
+                if (userCookie != null)
+                {
+                    string username = userCookie["Username"];
+                    MsUser user = UserController.ReadUserByName(username);
+                    if(user.UserRole != "customer")
+                    {
+                        Response.Redirect("~/Views/LoginPage.aspx");
+                    }
+                    TransactionGV.DataSource = TransactionController.ControlGetAllTransactionHeaderByUser(user.UserID);
+                    TransactionGV.DataBind();
+                }
+                else
+                {
+                    Response.Redirect("~/Views/LoginPage.aspx");
+                }
+            }
+        }
+
+        protected void TransactionGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow row = TransactionGV.SelectedRow;
+            string transactionID = row.Cells[0].Text;
+            Response.Redirect($"~/Views/TransactionDetailPage.aspx?id={transactionID}");
         }
     }
 }

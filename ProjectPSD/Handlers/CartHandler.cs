@@ -77,9 +77,36 @@ namespace ProjectPSD.Handlers
                 };
             }
         }
+
+        public static Response<string> HandleCartCheckOut(int uid)
+        {
+            List<Cart> userCarts = CartRepository.GetCartsByUser(uid);
+            if(userCarts.Count <= 0)
+            {
+                return new Response<string>
+                {
+                    Success = false,
+                    Message = "Your cart is empty!",
+                    Payload = null
+                };
+            }
+            else
+            {
+                TransactionRepository.CheckOutCart(TransactionHandler.GenerateTransactionID(), uid, userCarts);
+                CartRepository.DeleteAllUserCart(uid);
+                return new Response<string>
+                {
+                    Success = true,
+                    Message = "Success",
+                    Payload = null
+                };
+            }
+        }
         public static void HandleRemoveCart(int userID, int stationeryID)
         {
             CartRepository.RemoveCart(userID, stationeryID);
         }
+
+        
     }
 }

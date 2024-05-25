@@ -1,5 +1,6 @@
 ﻿using ProjectPSD.Controllers;
 using ProjectPSD.Models;
+using ProjectPSD.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace ProjectPSD.Views
                 }
                 else
                 {
-                    Response.Redirect("~/Views/LoginPage.aspx");
+                    Response.Redirect("~/Views/HomePage.aspx");
                 }
             }
         }
@@ -37,7 +38,7 @@ namespace ProjectPSD.Views
             //Cart cart = row.DataItem as Cart;
             String sid = CartGV.DataKeys[e.NewEditIndex]["StationeryId"].ToString();
             String uid = CartGV.DataKeys[e.NewEditIndex]["UserId"].ToString();
-            debug.Text = sid + uid;
+            //debug.Text = sid + uid;
             Response.Redirect("~/Views/UpdateCartPage.aspx?sid=" + sid + "&uid=" + uid);
         }
 
@@ -47,6 +48,22 @@ namespace ProjectPSD.Views
             String uid = CartGV.DataKeys[e.RowIndex]["UserId"].ToString();
             CartController.ControlRemoveFromCart(uid, sid);
             Response.Redirect("~/Views/CartPage.aspx");
+        }
+
+        protected void CheckOutButton_Click(object sender, EventArgs e)
+        {
+            HttpCookie userCookie = Request.Cookies["User_Cookie"];
+            MsUser user = UserController.ReadUserByName(userCookie["Username"]);
+
+            Response<string> response = CartController.ControlCheckOut(user.UserID);
+            if (response.Success)
+            {
+                Response.Redirect("~/Views/HomePage.aspx");
+            }
+            else
+            {
+                ErrorMsg.Text = response.Message;
+            }
         }
     }
 }
