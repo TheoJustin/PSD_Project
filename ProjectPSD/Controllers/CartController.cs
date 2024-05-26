@@ -23,9 +23,19 @@ namespace ProjectPSD.Controllers
                     Payload = null
                 };
             }
+            int qtyInt = Convert.ToInt32(qty);
+            if (qtyInt <= 0)
+            {
+                return new Response<Cart>()
+                {
+                    Success = false,
+                    Message = "Quantity must be more than 0",
+                    Payload = null
+                };
+            }
             else
             {
-                return CartHandler.HandleCartInsertion(uid, id, Int32.Parse(qty));
+                return CartHandler.HandleCartInsertion(uid, id, qtyInt);
             }
         }
 
@@ -51,6 +61,15 @@ namespace ProjectPSD.Controllers
                 };
             }
             int qtyInt = Convert.ToInt32(qty);
+            if (qtyInt <= 0)
+            {
+                return new Response<Cart>()
+                {
+                    Success = false,
+                    Message = "Quantity must be more than 0",
+                    Payload = null
+                };
+            }
             return CartHandler.HandleCartUpdate(uid, sid, qtyInt);
         }
         public static void ControlRemoveFromCart(String userID, String stationeryID)

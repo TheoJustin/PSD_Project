@@ -11,6 +11,6 @@
     <asp:Label ID="Label3" runat="server" Text="Remember Me"></asp:Label>
     <asp:CheckBox ID="RememberCB" runat="server" />
     <br />
-    <asp:Button ID="submitBtn" runat="server" Text="Button" OnClick="submitBtn_Click" />
+    <asp:Button ID="submitBtn" runat="server" Text="Login" OnClick="submitBtn_Click" />
     <asp:Label ID="errorMsg" runat="server" Text=""></asp:Label>
 </asp:Content>

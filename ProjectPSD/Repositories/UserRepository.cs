@@ -15,6 +15,27 @@ namespace ProjectPSD.Repositories
         {
             return !db.MsUsers.Any(u => u.UserName == name);
         }
+
+        public static bool CheckNameIsUniqueUpdate(string name, int uid)
+        {
+            return !db.MsUsers.Any(u => u.UserName == name && u.UserID != uid);
+        }
+
+        public static void UpdateUser(int uid, String name, DateTime dob, String gender, String address, String password, String phone)
+        {
+            MsUser user = db.MsUsers.Find(uid);
+            if (user != null)
+            {
+                user.UserName = name;
+                user.UserDOB = dob;
+                user.UserGender = gender;
+                user.UserAddress = address;
+                user.UserPassword = password;
+                user.UserPhone  = phone;
+                db.SaveChanges();
+            }
+        }
+
         public static int GenerateUserID()
         {
             int newID = 1;

@@ -22,9 +22,15 @@ namespace ProjectPSD.Views
                 {
                     string username = userCookie["Username"];
                     MsUser user = UserController.ReadUserByName(username);
-
-                    CartGV.DataSource = CartController.ReadAllCarts(user.UserID);
-                    CartGV.DataBind();
+                    if(user.UserRole == "customer")
+                    {
+                        CartGV.DataSource = CartController.ReadAllCarts(user.UserID);
+                        CartGV.DataBind();
+                    }
+                    else
+                    {
+                        Response.Redirect("~/Views/LoginPage.aspx");
+                    }
                 }
                 else
                 {

@@ -19,40 +19,9 @@ namespace ProjectPSD.Handlers
         }
 
 
-        public static Response<MsUser> HandleRegister(String name, String dob, String gender, String address, String password, String phone)
+        public static Response<MsUser> HandleRegister(String name, DateTime dob, String gender, String address, String password, String phone)
         {
-            // Parse the provided DOB string to DateTime
-            if (!DateTime.TryParse(dob, out DateTime dateOfBirth))
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "Invalid DOB format",
-                    Payload = null
-                };
-            }
-
-            TimeSpan ageDifference = DateTime.Now - dateOfBirth;
-            int ageInYears = (int)(ageDifference.TotalDays / 365);
-
-            if (ageInYears < 1) // Checks if the age is less than 1 year
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "User must be at least 1 year old",
-                    Payload = null
-                };
-            }
-            else if (!IsAlphanumeric(password)) // Checks if the password is alphanumeric
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "Password must be alphanumeric",
-                    Payload = null
-                };
-            }else if (!UserRepository.CheckNameIsUnique(name))
+            if (!UserRepository.CheckNameIsUnique(name))
             {
                 return new Response<MsUser>()
                 {
@@ -63,10 +32,33 @@ namespace ProjectPSD.Handlers
             }
             else
             {
-                MsUser user = UserFactory.Create(UserRepository.GenerateUserID(), name, gender, dateOfBirth, phone, password, address, "customer");
+                MsUser user = UserFactory.Create(UserRepository.GenerateUserID(), name, gender, dob, phone, password, address, "customer");
                 UserRepository.addUser(user);
 
 
+                return new Response<MsUser>()
+                {
+                    Success = true,
+                    Message = "",
+                    Payload = null
+                };
+            }
+        }
+
+        public static Response<MsUser> HandleUpdate(int uid, String name, DateTime dob, String gender, String address, String password, String phone)
+        {
+            if (!UserRepository.CheckNameIsUniqueUpdate(name, uid))
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "Name must be unique",
+                    Payload = null
+                };
+            }
+            else
+            {
+                UserRepository.UpdateUser(uid, name, dob, gender, address, password, phone);
                 return new Response<MsUser>()
                 {
                     Success = true,

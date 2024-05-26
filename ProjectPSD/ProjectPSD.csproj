@@ -107,6 +107,11 @@
     <Compile Include="Controllers\StationeryController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Dataset\TransactionDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Factories\CartFactory.cs" />
     <Compile Include="Factories\MsStationeryFactory.cs" />
     <Compile Include="Factories\TransactionDetailFactory.cs" />
@@ -247,6 +252,17 @@
       <DependentUpon>RAisoModel.edmx</DependentUpon>
     </Content>
     <Content Include="Layout\Navbar.Master" />
+    <Content Include="Dataset\TransactionDataset.xsc">
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Dataset\TransactionDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Dataset\TransactionDataset.xss">
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -255,7 +271,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Report\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

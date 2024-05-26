@@ -13,17 +13,6 @@ namespace ProjectPSD.Handlers
     {
         public static Response<Cart> HandleCartInsertion(int uid, int id, int qty)
         {
-            if(qty <= 0)
-            {
-                return new Response<Cart>()
-                {
-                    Success = false,
-                    Message = "Quantity must be more than 0",
-                    Payload = null
-                };
-            }
-            else
-            {
                 CartRepository.InsertCart(uid, id, qty);
                 return new Response<Cart>()
                 {
@@ -31,7 +20,6 @@ namespace ProjectPSD.Handlers
                     Message = "",
                     Payload = null
                 };
-            }
         }
 
         public static List<Cart> HandleAllCartsByUser(int uid)
@@ -57,17 +45,6 @@ namespace ProjectPSD.Handlers
 
         public static Response<Cart> HandleCartUpdate(int uid, int sid, int qty)
         {
-            if (qty <= 0)
-            {
-                return new Response<Cart>()
-                {
-                    Success = false,
-                    Message = "Quantity must be more than 0",
-                    Payload = null
-                };
-            }
-            else
-            {
                 CartRepository.UpdateCart(uid, sid, qty);
                 return new Response<Cart>()
                 {
@@ -75,7 +52,6 @@ namespace ProjectPSD.Handlers
                     Message = "",
                     Payload = null
                 };
-            }
         }
 
         public static Response<string> HandleCartCheckOut(int uid)
