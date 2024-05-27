@@ -23,5 +23,15 @@ namespace ProjectPSD.Handlers
         {
             return TransactionRepository.GetLastTransactionID()+1;
         }
+
+        public static List<TransactionDetail> HandleGetAllTransactionDetails()
+        {
+            return TransactionRepository.GetAllTransactionDetails();
+        }
+
+        public static List<TransactionHeader> HandleGetAllTransactionHeaders()
+        {
+            return TransactionRepository.GetAllTransactions();
+        }
     }
 }

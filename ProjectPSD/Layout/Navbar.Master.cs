@@ -11,12 +11,13 @@ namespace ProjectPSD.Layout
 {
     public partial class Navbar : System.Web.UI.MasterPage
     {
+        MsUser user;
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie cookie = Request.Cookies["User_Cookie"];
             if (cookie != null)
             {
-                MsUser user = UserController.ReadUserByName(cookie["Username"]);
+                user = UserController.ReadUserByName(cookie["Username"]);
                 if (user.UserRole == "customer")
                 {
                     Login.Visible = false;
@@ -69,7 +70,15 @@ namespace ProjectPSD.Layout
 
         protected void Transaction_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/TransactionPage.aspx");
+            if(user != null && user.UserRole == "customer")
+            {
+                Response.Redirect("~/Views/TransactionPage.aspx");
+
+            }
+            else if (user != null && user.UserRole == "admin")
+            {
+                Response.Redirect("~/Views/TransactionReportPage.aspx");
+            }
         }
 
         protected void UpdateProfile_Click(object sender, EventArgs e)

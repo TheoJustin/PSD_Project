@@ -327,6 +327,8 @@ namespace ProjectPSD.Dataset {
             
             private global::System.Data.DataColumn columnTransactionDate;
             
+            private global::System.Data.DataColumn columnGrandTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TransactionHeaderDataTable() {
@@ -386,6 +388,14 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GrandTotalColumn {
+                get {
+                    return this.columnGrandTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -421,12 +431,13 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionHeaderRow AddTransactionHeaderRow(string TransactionID, string UserID, string TransactionDate) {
+            public TransactionHeaderRow AddTransactionHeaderRow(string TransactionID, string UserID, string TransactionDate, string GrandTotal) {
                 TransactionHeaderRow rowTransactionHeaderRow = ((TransactionHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TransactionID,
                         UserID,
-                        TransactionDate};
+                        TransactionDate,
+                        GrandTotal};
                 rowTransactionHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTransactionHeaderRow);
                 return rowTransactionHeaderRow;
@@ -452,6 +463,7 @@ namespace ProjectPSD.Dataset {
                 this.columnTransactionID = base.Columns["TransactionID"];
                 this.columnUserID = base.Columns["UserID"];
                 this.columnTransactionDate = base.Columns["TransactionDate"];
+                this.columnGrandTotal = base.Columns["GrandTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,6 +475,8 @@ namespace ProjectPSD.Dataset {
                 base.Columns.Add(this.columnUserID);
                 this.columnTransactionDate = new global::System.Data.DataColumn("TransactionDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionDate);
+                this.columnGrandTotal = new global::System.Data.DataColumn("GrandTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrandTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -598,9 +612,13 @@ namespace ProjectPSD.Dataset {
             
             private global::System.Data.DataColumn columnTransactionID;
             
-            private global::System.Data.DataColumn columnStationeryID;
+            private global::System.Data.DataColumn columnStationeryName;
             
             private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnStationeryPrice;
+            
+            private global::System.Data.DataColumn columnSubTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -645,9 +663,9 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn StationeryIDColumn {
+            public global::System.Data.DataColumn StationeryNameColumn {
                 get {
-                    return this.columnStationeryID;
+                    return this.columnStationeryName;
                 }
             }
             
@@ -656,6 +674,22 @@ namespace ProjectPSD.Dataset {
             public global::System.Data.DataColumn QuantityColumn {
                 get {
                     return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StationeryPriceColumn {
+                get {
+                    return this.columnStationeryPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SubTotalColumn {
+                get {
+                    return this.columnSubTotal;
                 }
             }
             
@@ -696,12 +730,14 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string StationeryID, string Quantity) {
+            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string StationeryName, string Quantity, string StationeryPrice, string SubTotal) {
                 TransactionDetailRow rowTransactionDetailRow = ((TransactionDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        StationeryID,
-                        Quantity};
+                        StationeryName,
+                        Quantity,
+                        StationeryPrice,
+                        SubTotal};
                 if ((parentTransactionHeaderRowByTransactionHeader_TransactionDetail != null)) {
                     columnValuesArray[0] = parentTransactionHeaderRowByTransactionHeader_TransactionDetail[0];
                 }
@@ -728,8 +764,10 @@ namespace ProjectPSD.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnTransactionID = base.Columns["TransactionID"];
-                this.columnStationeryID = base.Columns["StationeryID"];
+                this.columnStationeryName = base.Columns["StationeryName"];
                 this.columnQuantity = base.Columns["Quantity"];
+                this.columnStationeryPrice = base.Columns["StationeryPrice"];
+                this.columnSubTotal = base.Columns["SubTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,10 +775,14 @@ namespace ProjectPSD.Dataset {
             private void InitClass() {
                 this.columnTransactionID = new global::System.Data.DataColumn("TransactionID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionID);
-                this.columnStationeryID = new global::System.Data.DataColumn("StationeryID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStationeryID);
+                this.columnStationeryName = new global::System.Data.DataColumn("StationeryName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationeryName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
+                this.columnStationeryPrice = new global::System.Data.DataColumn("StationeryPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStationeryPrice);
+                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -931,6 +973,22 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string GrandTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionHeader.GrandTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrandTotal\' in table \'TransactionHeader\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionHeader.GrandTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTransactionIDNull() {
                 return this.IsNull(this.tableTransactionHeader.TransactionIDColumn);
             }
@@ -963,6 +1021,18 @@ namespace ProjectPSD.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTransactionDateNull() {
                 this[this.tableTransactionHeader.TransactionDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGrandTotalNull() {
+                return this.IsNull(this.tableTransactionHeader.GrandTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGrandTotalNull() {
+                this[this.tableTransactionHeader.GrandTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1009,17 +1079,17 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string StationeryID {
+            public string StationeryName {
                 get {
                     try {
-                        return ((string)(this[this.tableTransactionDetail.StationeryIDColumn]));
+                        return ((string)(this[this.tableTransactionDetail.StationeryNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'StationeryID\' in table \'TransactionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'StationeryName\' in table \'TransactionDetail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTransactionDetail.StationeryIDColumn] = value;
+                    this[this.tableTransactionDetail.StationeryNameColumn] = value;
                 }
             }
             
@@ -1036,6 +1106,38 @@ namespace ProjectPSD.Dataset {
                 }
                 set {
                     this[this.tableTransactionDetail.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string StationeryPrice {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetail.StationeryPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StationeryPrice\' in table \'TransactionDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetail.StationeryPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SubTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetail.SubTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubTotal\' in table \'TransactionDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetail.SubTotalColumn] = value;
                 }
             }
             
@@ -1064,14 +1166,14 @@ namespace ProjectPSD.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsStationeryIDNull() {
-                return this.IsNull(this.tableTransactionDetail.StationeryIDColumn);
+            public bool IsStationeryNameNull() {
+                return this.IsNull(this.tableTransactionDetail.StationeryNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetStationeryIDNull() {
-                this[this.tableTransactionDetail.StationeryIDColumn] = global::System.Convert.DBNull;
+            public void SetStationeryNameNull() {
+                this[this.tableTransactionDetail.StationeryNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1084,6 +1186,30 @@ namespace ProjectPSD.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetQuantityNull() {
                 this[this.tableTransactionDetail.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsStationeryPriceNull() {
+                return this.IsNull(this.tableTransactionDetail.StationeryPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetStationeryPriceNull() {
+                this[this.tableTransactionDetail.StationeryPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSubTotalNull() {
+                return this.IsNull(this.tableTransactionDetail.SubTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSubTotalNull() {
+                this[this.tableTransactionDetail.SubTotalColumn] = global::System.Convert.DBNull;
             }
         }
         

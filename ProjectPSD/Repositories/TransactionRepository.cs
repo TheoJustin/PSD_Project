@@ -44,6 +44,17 @@ namespace ProjectPSD.Repositories
             return db.TransactionHeaders.Where(transaction => transaction.UserID == uid).ToList();
         }
 
+        public static List<TransactionHeader> GetAllTransactions()
+        {
+            return db.TransactionHeaders.ToList();
+        }
+
+        public static List<TransactionDetail> GetAllTransactionDetails()
+        {
+            return db.TransactionDetails.ToList();
+
+        }
+
         public static List<TransactionDetail> GetTransactionDetailsFromID(int transactionID)
         {
             return db.TransactionDetails.Where(transaction => transaction.TransactionID == transactionID).ToList();

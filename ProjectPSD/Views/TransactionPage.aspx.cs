@@ -1,4 +1,5 @@
 ﻿using ProjectPSD.Controllers;
+using ProjectPSD.Dataset;
 using ProjectPSD.Models;
 using System;
 using System.Collections.Generic;
@@ -21,12 +22,15 @@ namespace ProjectPSD.Views
                 {
                     string username = userCookie["Username"];
                     MsUser user = UserController.ReadUserByName(username);
-                    if(user.UserRole != "customer")
+                    if(user.UserRole == "customer")
+                    {
+                        TransactionGV.DataSource = TransactionController.ControlGetAllTransactionHeaderByUser(user.UserID);
+                        TransactionGV.DataBind();
+                    }
+                    else
                     {
                         Response.Redirect("~/Views/LoginPage.aspx");
                     }
-                    TransactionGV.DataSource = TransactionController.ControlGetAllTransactionHeaderByUser(user.UserID);
-                    TransactionGV.DataBind();
                 }
                 else
                 {
@@ -34,6 +38,8 @@ namespace ProjectPSD.Views
                 }
             }
         }
+
+        
 
         protected void TransactionGV_SelectedIndexChanged(object sender, EventArgs e)
         {
