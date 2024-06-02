@@ -19,14 +19,19 @@ namespace ProjectPSD.Views
                 HttpCookie cookie = Request.Cookies["User_Cookie"];
                 String sid = Request.QueryString["sid"];
                 String uid = Request.QueryString["uid"];
-                if (cookie != null)
+                MsUser user = null;
+                if (Session["User_Session"] != null)
                 {
-                    MsUser user = UserController.ReadUserByName(cookie["Username"]);
-                    if (user == null || sid == null || uid == null)
-                    {
-                        errorMsg.Text = sid + uid;
-                        Response.Redirect("~/Views/HomePage.aspx");
-                    }
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (cookie != null)
+                {
+                    user = UserController.ReadUserByName(cookie["Username"]);
+                }
+                if (user == null || sid == null || uid == null)
+                {
+                    errorMsg.Text = sid + uid;
+                    Response.Redirect("~/Views/HomePage.aspx");
                 }
                 Cart cart = CartController.ReadCartById(uid, sid);
                 if (cart != null)

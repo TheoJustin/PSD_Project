@@ -21,13 +21,18 @@ namespace ProjectPSD.Views
             if (!IsPostBack)
             {
                 HttpCookie cookie = Request.Cookies["User_Cookie"];
-                if (cookie != null)
+                MsUser user = null;
+                if (Session["User_Session"] != null)
                 {
-                    MsUser user = UserController.ReadUserByName(cookie["Username"]);
-                    if (user == null || user.UserRole != "admin")
-                    {
-                        Response.Redirect("~/Views/HomePage.aspx");
-                    }
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (cookie != null)
+                {
+                    user = UserController.ReadUserByName(cookie["Username"]);
+                }
+                if (user == null || user.UserRole != "admin")
+                {
+                    Response.Redirect("~/Views/HomePage.aspx");
                 }
                 errMsg.ForeColor = System.Drawing.Color.Red;
             }

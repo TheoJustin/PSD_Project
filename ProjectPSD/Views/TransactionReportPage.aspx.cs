@@ -20,23 +20,23 @@ namespace ProjectPSD.Views
             if (!IsPostBack)
             {
                 HttpCookie userCookie = Request.Cookies["User_Cookie"];
-
-                if (userCookie != null)
+                MsUser user = null;
+                if (Session["User_Session"] != null)
+                {
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (userCookie != null)
                 {
                     string username = userCookie["Username"];
-                    MsUser user = UserController.ReadUserByName(username);
-                    if (user.UserRole == "admin")
-                    {
-                        TransactionReport report = new TransactionReport();
-                        CrystalReportViewer1.ReportSource = report;
-                        List<TransactionHeader> transactionHeaders = TransactionController.ControlGetAllTransactionHeaders();
+                    user = UserController.ReadUserByName(username);
+                }
+                if (user != null && user.UserRole == "admin")
+                {
+                    TransactionReport report = new TransactionReport();
+                    CrystalReportViewer1.ReportSource = report;
+                    List<TransactionHeader> transactionHeaders = TransactionController.ControlGetAllTransactionHeaders();
 
-                        report.SetDataSource(GetData(transactionHeaders));
-                    }
-                    else
-                    {
-                        Response.Redirect("~/Views/LoginPage.aspx");
-                    }
+                    report.SetDataSource(GetData(transactionHeaders));
                 }
                 else
                 {

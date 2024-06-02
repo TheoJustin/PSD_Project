@@ -18,19 +18,24 @@ namespace ProjectPSD.Views
             StationeryGV.DataSource = msStationeries;
             StationeryGV.DataBind();
             HttpCookie cookie = Request.Cookies["User_Cookie"];
-            if (cookie != null)
+            MsUser user = null;
+            if (Session["User_Session"] != null)
             {
-                MsUser user = UserController.ReadUserByName(cookie["Username"]);
-                if (user == null || user.UserRole != "admin")
-                {
-                    InsertBtn.Visible = false;
-                    StationeryGV.Columns[3].Visible = false;
-                }
-                else
-                {
-                    InsertBtn.Visible = true;
-                    StationeryGV.Columns[3].Visible = true;
-                }
+                user = Session["User_Session"] as MsUser;
+            }
+            else if (cookie != null)
+            {
+                user = UserController.ReadUserByName(cookie["Username"]);
+            }
+            if (user == null || user.UserRole != "admin")
+            {
+                InsertBtn.Visible = false;
+                StationeryGV.Columns[3].Visible = false;
+            }
+            else if(user.UserRole == "customer")
+            {
+                InsertBtn.Visible = true;
+                StationeryGV.Columns[3].Visible = true;
             }
         }
 

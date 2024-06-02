@@ -15,9 +15,16 @@ namespace ProjectPSD.Layout
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie cookie = Request.Cookies["User_Cookie"];
-            if (cookie != null)
+            if (Session["User_Session"] != null)
+            {
+                user = Session["User_Session"] as MsUser;
+            }
+            else if (cookie != null)
             {
                 user = UserController.ReadUserByName(cookie["Username"]);
+            }
+            if(user != null)
+            {
                 if (user.UserRole == "customer")
                 {
                     Login.Visible = false;
@@ -89,6 +96,8 @@ namespace ProjectPSD.Layout
         protected void Logout_Click(object sender, EventArgs e)
         {
             Response.Cookies["User_Cookie"].Expires = DateTime.Now.AddDays(-1);
+            Session["User_Session"] = null;
+            Session.Abandon();
             Response.Redirect("~/Views/LoginPage.aspx");
         }
     }

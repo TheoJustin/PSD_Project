@@ -24,22 +24,23 @@ namespace ProjectPSD.Views
                     Response.Redirect("~/Views/HomePage.aspx");
                 }
                 HttpCookie userCookie = Request.Cookies["User_Cookie"];
-                if(userCookie != null)
+                MsUser user = null;
+                if (Session["User_Session"] != null)
                 {
-                    MsUser user = UserController.ReadUserByName(userCookie["Username"]);
-                    if (user != null && user.UserRole == "customer")
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (userCookie != null)
+                {
+                    user = UserController.ReadUserByName(userCookie["Username"]);
+                }
+                if (user != null && user.UserRole == "customer")
+                {
+                    ShowActions();
+                    // if this item mis already on user's cart, will be redirected to update the cart instead of the details
+                    Cart cart = CartController.ReadCartById(user.UserID.ToString(), id);
+                    if(cart != null)
                     {
-                        ShowActions();
-                        // if this item mis already on user's cart, will be redirected to update the cart instead of the details
-                        Cart cart = CartController.ReadCartById(user.UserID.ToString(), id);
-                        if(cart != null)
-                        {
-                            Response.Redirect("~/Views/UpdateCartPage.aspx?sid=" + id + "&uid=" + user.UserID.ToString());
-                        }
-                    }
-                    else
-                    {
-                        HideActions();
+                        Response.Redirect("~/Views/UpdateCartPage.aspx?sid=" + id + "&uid=" + user.UserID.ToString());
                     }
                 }
                 else
@@ -51,6 +52,10 @@ namespace ProjectPSD.Views
                 {
                     StationeryNameLbl.Text = msStationery.StationeryName;
                     StationeryPriceLbl.Text = msStationery.StationeryPrice.ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/Views/HomePage.aspx");
                 }
             }
         }

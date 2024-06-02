@@ -17,20 +17,20 @@ namespace ProjectPSD.Views
             if (!IsPostBack)
             {
                 HttpCookie userCookie = Request.Cookies["User_Cookie"];
-
-                if (userCookie != null)
+                MsUser user = null;
+                if (Session["User_Session"] != null)
+                {
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (userCookie != null)
                 {
                     string username = userCookie["Username"];
-                    MsUser user = UserController.ReadUserByName(username);
-                    if(user.UserRole == "customer")
-                    {
-                        TransactionGV.DataSource = TransactionController.ControlGetAllTransactionHeaderByUser(user.UserID);
-                        TransactionGV.DataBind();
-                    }
-                    else
-                    {
-                        Response.Redirect("~/Views/LoginPage.aspx");
-                    }
+                    user = UserController.ReadUserByName(username);
+                }
+                if(user != null && user.UserRole == "customer")
+                {
+                    TransactionGV.DataSource = TransactionController.ControlGetAllTransactionHeaderByUser(user.UserID);
+                    TransactionGV.DataBind();
                 }
                 else
                 {

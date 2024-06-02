@@ -97,7 +97,7 @@ namespace ProjectPSD.Handlers
                     cookie.Expires = DateTime.Now.AddMinutes(10);
                     HttpContext.Current.Response.Cookies.Add(cookie);
                 }
-                // HttpContext.Current.Session["User_Session"] = user;
+                HttpContext.Current.Session["User_Session"] = user;
                 return new Response<MsUser>()
                 {
                     Success = true,

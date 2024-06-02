@@ -20,13 +20,18 @@ namespace ProjectPSD.Views
             {
                 HttpCookie cookie = Request.Cookies["User_Cookie"];
                 String id = Request.QueryString["id"];
-                if (cookie != null)
+                MsUser user = null;
+                if (Session["User_Session"] != null)
                 {
-                    MsUser user = UserController.ReadUserByName(cookie["Username"]);
-                    if (user == null || user.UserRole != "admin" || id == null)
-                    {
-                        Response.Redirect("~/Views/HomePage.aspx");
-                    }
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (cookie != null)
+                {
+                    user = UserController.ReadUserByName(cookie["Username"]);
+                }
+                if (user == null || user.UserRole != "admin" || id == null)
+                {
+                    Response.Redirect("~/Views/HomePage.aspx");
                 }
                 MsStationery msStationery = StationeryController.ReadStationeryById(id);
 
@@ -34,6 +39,10 @@ namespace ProjectPSD.Views
                 {
                     NameTB.Text = msStationery.StationeryName;
                     PriceTB.Text = msStationery.StationeryPrice.ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/Views/HomePage.aspx");
                 }
             }
         }

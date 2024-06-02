@@ -30,12 +30,30 @@ namespace ProjectPSD.Controllers
                     Message = "Name must be between 3 and 50 characters",
                     Payload = null
                 };
-            }else if(price == "" || !int.TryParse(price, out int number) || number < 2000)
+            }else if(price == "" )
             {
                 return new Response<MsStationery>()
                 {
                     Success = false,
-                    Message = "Price must be filled, numeric, and greater or equal to 2000",
+                    Message = "Price must be filled",
+                    Payload = null
+                };
+            }
+            else if (!int.TryParse(price, out int number))
+            {
+                return new Response<MsStationery>()
+                {
+                    Success = false,
+                    Message = "Price must be numeric",
+                    Payload = null
+                };
+            }
+            else if (number < 2000)
+            {
+                return new Response<MsStationery>()
+                {
+                    Success = false,
+                    Message = "Price must be greater or equal to 2000",
                     Payload = null
                 };
             }
@@ -61,17 +79,35 @@ namespace ProjectPSD.Controllers
                     Payload = null
                 };
             }
-            else if (price == "" || !int.TryParse(price, out int number) || number < 2000)
+            else if (price == "")
             {
                 return new Response<MsStationery>()
                 {
                     Success = false,
-                    Message = "Price must be filled, numeric, and greater or equal to 2000",
+                    Message = "Price must be filled",
+                    Payload = null
+                };
+            }
+            else if (!int.TryParse(price, out int number))
+            {
+                return new Response<MsStationery>()
+                {
+                    Success = false,
+                    Message = "Price must be numeric",
+                    Payload = null
+                };
+            }
+            else if (number < 2000)
+            {
+                return new Response<MsStationery>()
+                {
+                    Success = false,
+                    Message = "Price must be greater or equal to 2000",
                     Payload = null
                 };
             }
 
-            
+
             StationeryHandler.HandleStationeryUpdate(id, name, Int32.Parse(price));
             return new Response<MsStationery>()
             {

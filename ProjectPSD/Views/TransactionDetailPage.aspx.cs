@@ -17,11 +17,20 @@ namespace ProjectPSD.Views
             if (!IsPostBack)
             {
                 HttpCookie userCookie = Request.Cookies["User_Cookie"];
-
-                if (userCookie != null)
+                string transactionID = null;
+                MsUser user = null;
+                if (Session["User_Session"] != null)
                 {
-                    string transactionID = Request.QueryString["id"];
-                    MsUser user = UserController.ReadUserByName(userCookie["Username"]);
+                    transactionID = Request.QueryString["id"];
+                    user = Session["User_Session"] as MsUser;
+                }
+                else if (userCookie != null)
+                {
+                    transactionID = Request.QueryString["id"];
+                    user = UserController.ReadUserByName(userCookie["Username"]);
+                }
+                if(user != null)
+                {
                     if (user.UserRole != "customer" || transactionID == null)
                     {
                         Response.Redirect("~/Views/LoginPage.aspx");
@@ -29,6 +38,7 @@ namespace ProjectPSD.Views
                     List<TransactionDetail> transactionDetails = TransactionController.GetAllTransactionDetailsByID(Convert.ToInt32(transactionID));
                     TransactionDetailsGV.DataSource = transactionDetails;
                     TransactionDetailsGV.DataBind();
+
                 }
                 else
                 {
