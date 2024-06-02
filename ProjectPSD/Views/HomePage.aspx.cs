@@ -26,6 +26,7 @@ namespace ProjectPSD.Views
             else if (cookie != null)
             {
                 user = UserController.ReadUserByName(cookie["Username"]);
+                Session["User_Session"] = user;
             }
             if (user == null || user.UserRole != "admin")
             {

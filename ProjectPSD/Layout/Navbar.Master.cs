@@ -22,6 +22,7 @@ namespace ProjectPSD.Layout
             else if (cookie != null)
             {
                 user = UserController.ReadUserByName(cookie["Username"]);
+
             }
             if(user != null)
             {

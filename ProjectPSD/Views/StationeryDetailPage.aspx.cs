@@ -32,6 +32,7 @@ namespace ProjectPSD.Views
                 else if (userCookie != null)
                 {
                     user = UserController.ReadUserByName(userCookie["Username"]);
+                    Session["User_Session"] = user;
                 }
                 if (user != null && user.UserRole == "customer")
                 {

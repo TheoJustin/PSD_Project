@@ -28,6 +28,7 @@ namespace ProjectPSD.Views
                 {
                     transactionID = Request.QueryString["id"];
                     user = UserController.ReadUserByName(userCookie["Username"]);
+                    Session["User_Session"] = user;
                 }
                 if(user != null)
                 {

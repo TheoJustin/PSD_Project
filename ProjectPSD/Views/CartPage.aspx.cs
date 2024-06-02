@@ -26,6 +26,7 @@ namespace ProjectPSD.Views
                 {
                     string username = userCookie["Username"];
                     user = UserController.ReadUserByName(username);
+                    Session["User_Session"] = user;
                 }
                 if(user != null)
                 {
