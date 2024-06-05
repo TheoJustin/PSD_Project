@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/Navbar.Master" AutoEventWireup="true" CodeBehind="TransactionDetailPage.aspx.cs" Inherits="ProjectPSD.Views.TransactionDetailPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Trasanction Detail</h1>
+    <h1>Transaction Detail</h1>
 
     <asp:GridView ID="TransactionDetailsGV" runat="server" AutoGenerateColumns="False" >
         <Columns>

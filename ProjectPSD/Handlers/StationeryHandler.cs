@@ -35,5 +35,23 @@ namespace ProjectPSD.Handlers
         {
             StationeryRepository.UpdateStationeryByID(id, name, price);
         }
+
+        public static void HandleRemoveStationery(int id)
+        {
+            MsStationery stationery = StationeryRepository.GetStationeryByID(id);
+            if(stationery == null)
+            {
+                return;
+            }
+            if(stationery.Carts.Count > 0)
+            {
+                CartRepository.RemoveCarts(stationery.Carts.ToList());
+            }
+            if(stationery.TransactionDetails.Count > 0)
+            {
+                TransactionRepository.RemoveDetails(stationery.TransactionDetails.ToList());
+            }
+            StationeryRepository.RemoveStationery(id);
+        }
     }
 }

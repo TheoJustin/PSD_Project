@@ -58,5 +58,13 @@ namespace ProjectPSD.Views
             string stationeryId = row.Cells[0].Text;
             Response.Redirect($"~/Views/StationeryDetailPage.aspx?id={stationeryId}");
         }
+
+        protected void DeleteRow(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = StationeryGV.Rows[e.RowIndex];
+            String index = row.Cells[0].Text;
+            StationeryController.ControlRemoveStationery(index);
+            Response.Redirect("~/Views/HomePage.aspx");
+        }
     }
 }

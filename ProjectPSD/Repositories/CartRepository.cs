@@ -53,5 +53,11 @@ namespace ProjectPSD.Repositories
             db.Carts.Remove(cart);
             db.SaveChanges();
         }
+
+        public static void RemoveCarts(List<Cart> carts)
+        {
+            db.Carts.RemoveRange(carts);
+            db.SaveChanges();
+        }
     }
 }

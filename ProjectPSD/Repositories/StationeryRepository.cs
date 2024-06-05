@@ -53,6 +53,13 @@ namespace ProjectPSD.Repositories
             db.SaveChanges();
         }
 
+        public static void RemoveStationery(int id)
+        {
+            MsStationery stationery = GetStationeryByID(id);
+            db.MsStationeries.Remove(stationery);
+            db.SaveChanges();
+        }
+
         
     }
 }

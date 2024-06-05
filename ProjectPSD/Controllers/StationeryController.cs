@@ -116,5 +116,13 @@ namespace ProjectPSD.Controllers
                 Payload = null
             };
         }
+        public static void ControlRemoveStationery(string id)
+        {
+            if(int.TryParse(id, out int stationeryID))
+            {
+                StationeryHandler.HandleRemoveStationery(stationeryID);
+            }
+            return;
+        }
     }
 }

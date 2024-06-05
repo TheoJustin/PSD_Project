@@ -59,5 +59,11 @@ namespace ProjectPSD.Repositories
         {
             return db.TransactionDetails.Where(transaction => transaction.TransactionID == transactionID).ToList();
         }
+
+        public static void RemoveDetails(List<TransactionDetail> details)
+        {
+            db.TransactionDetails.RemoveRange(details);
+            db.SaveChanges();
+        }
     }
 }
