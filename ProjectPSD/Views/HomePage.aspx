@@ -14,4 +14,6 @@
 
     <hr />
     <asp:Button ID="InsertBtn" runat="server" Text="Insert New Stationery" OnClick="InsertBtn_Click"/>
+    <asp:Label ID="username" runat="server" Text=""></asp:Label>
+    <asp:Label ID="password" runat="server" Text=""></asp:Label>
 </asp:Content>

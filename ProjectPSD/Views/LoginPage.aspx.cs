@@ -43,6 +43,7 @@ namespace ProjectPSD.Views
 
             if (response.Success)
             {
+                //errorMsg.Text = (response.Payload as MsUser).UserName;
                 Response.Redirect("~/Views/HomePage.aspx");
             }
             else

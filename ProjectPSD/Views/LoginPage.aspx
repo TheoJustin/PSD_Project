@@ -6,7 +6,7 @@
     <asp:TextBox ID="NameTB" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-    <asp:TextBox ID="PasswordTB" runat="server"></asp:TextBox>
+    <asp:TextBox ID="PasswordTB" TextMode="Password" runat="server"></asp:TextBox>
     <br />
     <asp:Label ID="Label3" runat="server" Text="Remember Me"></asp:Label>
     <asp:CheckBox ID="RememberCB" runat="server" />

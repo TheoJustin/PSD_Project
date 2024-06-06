@@ -24,7 +24,7 @@
     </div>
     <div>
         <asp:Label ID="Label5" runat="server" Text="Password"></asp:Label>
-        <asp:TextBox ID="PasswordTB" runat="server"></asp:TextBox>
+        <asp:TextBox ID="PasswordTB" TextMode="Password" runat="server"></asp:TextBox>
     </div>
     <div>
         <asp:Label ID="Label6" runat="server" Text="Phone"></asp:Label>

@@ -102,7 +102,7 @@ namespace ProjectPSD.Handlers
                 {
                     Success = true,
                     Message = "",
-                    Payload = null
+                    Payload = user
                 };
             }
         }
