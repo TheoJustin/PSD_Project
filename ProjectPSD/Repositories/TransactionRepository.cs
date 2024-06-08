@@ -16,7 +16,7 @@ namespace ProjectPSD.Repositories
             // harus pake ? supaya dia bakal return null kalo gaada
             // kalau kita gapake ? maka bakal return empty rather than null
 
-            int? lastID = db.TransactionHeaders.Max(x => x.TransactionID);
+            int? lastID = db.TransactionHeaders.Max(x => (int?)x.TransactionID);
 
             if (lastID == null)
             {
@@ -63,6 +63,18 @@ namespace ProjectPSD.Repositories
         public static void RemoveDetails(List<TransactionDetail> details)
         {
             db.TransactionDetails.RemoveRange(details);
+            db.SaveChanges();
+        }
+
+        public static void RemoveTransactionDetail(TransactionDetail details)
+        {
+            db.TransactionDetails.Remove(details);
+            db.SaveChanges();
+        }
+
+        public static void RemoveTransactionHeader(TransactionHeader transactionHeader)
+        {
+            db.TransactionHeaders.Remove(transactionHeader);
             db.SaveChanges();
         }
     }

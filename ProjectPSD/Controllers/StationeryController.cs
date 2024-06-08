@@ -22,7 +22,7 @@ namespace ProjectPSD.Controllers
 
         public static Response<MsStationery> ValidateStationeryInsertion(string name, string price)
         {
-            if (!(name.Length > 3 && name.Length < 50))
+            if (!(name.Length >= 3 && name.Length <= 50))
             {
                 return new Response<MsStationery>()
                 {
@@ -70,7 +70,7 @@ namespace ProjectPSD.Controllers
 
         public static Response<MsStationery> ValidateStationeryUpdate(int id, string name, string price)
         {
-            if (!(name.Length > 3 && name.Length < 50))
+            if (!(name.Length >= 3 && name.Length <= 50))
             {
                 return new Response<MsStationery>()
                 {

@@ -62,7 +62,7 @@ namespace ProjectPSD.Handlers
                 return new Response<MsUser>()
                 {
                     Success = true,
-                    Message = "",
+                    Message = "Successfully updated profile!",
                     Payload = null
                 };
             }

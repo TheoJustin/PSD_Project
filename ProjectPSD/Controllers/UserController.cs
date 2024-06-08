@@ -23,37 +23,12 @@ namespace ProjectPSD.Controllers
                     Message = "Name must be filled, between 5 and 50 characters",
                     Payload = null
                 };
-            }else if (dob == "")
+            } if (dob == "")
             {
                 return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "DOB must be filled",
-                    Payload = null
-                };
-            }
-            else if (address == "")
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "address must be filled",
-                    Payload = null
-                };
-            }else if (password == "")
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "password must be filled",
-                    Payload = null
-                };
-            }else if (phone == "")
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "phone must be filled",
                     Payload = null
                 };
             }
@@ -80,12 +55,48 @@ namespace ProjectPSD.Controllers
                     Payload = null
                 };
             }
-            else if (!IsAlphanumeric(password)) // Checks if the password is alphanumeric
+            if (gender == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "gender must be selected",
+                    Payload = null
+                };
+            }
+            if (address == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "address must be filled",
+                    Payload = null
+                };
+            } if (password == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "password must be filled",
+                    Payload = null
+                };
+            } 
+            
+            if (!IsAlphanumeric(password)) // Checks if the password is alphanumeric
             {
                 return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "Password must be alphanumeric",
+                    Payload = null
+                };
+            }
+            if (phone == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "phone must be filled",
                     Payload = null
                 };
             }
@@ -106,39 +117,12 @@ namespace ProjectPSD.Controllers
                     Payload = null
                 };
             }
-            else if (dob == "")
+             if (dob == "")
             {
                 return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "DOB must be filled",
-                    Payload = null
-                };
-            }
-            else if (address == "")
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "address must be filled",
-                    Payload = null
-                };
-            }
-            else if (password == "")
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "password must be filled",
-                    Payload = null
-                };
-            }
-            else if (phone == "")
-            {
-                return new Response<MsUser>()
-                {
-                    Success = false,
-                    Message = "phone must be filled",
                     Payload = null
                 };
             }
@@ -165,12 +149,49 @@ namespace ProjectPSD.Controllers
                     Payload = null
                 };
             }
-            else if (!IsAlphanumeric(password)) // Checks if the password is alphanumeric
+            if (gender == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "gender must be selected",
+                    Payload = null
+                };
+            }
+             if (address == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "address must be filled",
+                    Payload = null
+                };
+            }
+             if (password == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "password must be filled",
+                    Payload = null
+                };
+            }
+            
+             if (!IsAlphanumeric(password)) // Checks if the password is alphanumeric
             {
                 return new Response<MsUser>()
                 {
                     Success = false,
                     Message = "Password must be alphanumeric",
+                    Payload = null
+                };
+            }
+             if (phone == "")
+            {
+                return new Response<MsUser>()
+                {
+                    Success = false,
+                    Message = "phone must be filled",
                     Payload = null
                 };
             }

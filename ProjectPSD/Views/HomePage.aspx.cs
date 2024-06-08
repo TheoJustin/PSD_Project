@@ -22,13 +22,11 @@ namespace ProjectPSD.Views
             if (Session["User_Session"] != null)
             {
                 user = Session["User_Session"] as MsUser;
-                username.Text = "masuk session";
             }
             else if (cookie != null)
             {
                 user = UserController.ReadUserByName(cookie["Username"]);
                 Session["User_Session"] = user;
-                username.Text = "masuk cookkir";
             }
             if (user == null || user.UserRole != "admin")
             {
@@ -39,15 +37,6 @@ namespace ProjectPSD.Views
             {
                 InsertBtn.Visible = true;
                 StationeryGV.Columns[3].Visible = true;
-            }
-            if(user != null)
-            {
-                username.Text = user.UserName;
-                password.Text = user.UserPassword;
-            }
-            else
-            {
-                //username.Text = "null bro";
             }
         }
 

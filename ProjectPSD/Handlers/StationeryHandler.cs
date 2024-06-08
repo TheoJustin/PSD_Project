@@ -49,7 +49,8 @@ namespace ProjectPSD.Handlers
             }
             if(stationery.TransactionDetails.Count > 0)
             {
-                TransactionRepository.RemoveDetails(stationery.TransactionDetails.ToList());
+                //TransactionRepository.RemoveDetails(stationery.TransactionDetails.ToList());
+                TransactionHandler.HandleRemoveDetails(stationery.TransactionDetails.ToList());
             }
             StationeryRepository.RemoveStationery(id);
         }

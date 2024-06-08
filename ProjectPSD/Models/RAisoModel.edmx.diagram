@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7bd54e6e83d24596bf263dd2f241533f" Name="Diagram1">
-        <EntityTypeShape EntityType="RAisoDatabaseModel.Cart" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RAisoDatabaseModel.MsStationery" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RAisoDatabaseModel.Cart" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RAisoDatabaseModel.MsStationery" Width="1.5" PointX="2.625" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="RAisoDatabaseModel.MsUser" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="RAisoDatabaseModel.TransactionDetail" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="RAisoDatabaseModel.TransactionHeader" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RAisoDatabaseModel.TransactionHeader" Width="1.5" PointX="3.625" PointY="2.25" IsExpanded="true" />
         <AssociationConnector Association="RAisoDatabaseModel.FK_Cart_MsStationery" ManuallyRouted="false" />
         <AssociationConnector Association="RAisoDatabaseModel.FK_Cart_MsUser" ManuallyRouted="false" />
         <AssociationConnector Association="RAisoDatabaseModel.FK_TransactionDetail_MsStationery" ManuallyRouted="false" />

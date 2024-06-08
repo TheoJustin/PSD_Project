@@ -3,6 +3,7 @@ using ProjectPSD.Models;
 using ProjectPSD.Modules;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -61,11 +62,14 @@ namespace ProjectPSD.Views
                 Response<MsUser> response = UserController.ValidateUpdateProfile(user.UserID, name, dob, gender, address, password, phone);
                 if(!response.Success)
                 {
+                    ErrorMsg.ForeColor = Color.Red;
                     ErrorMsg.Text = response.Message;
                 }
                 else
                 {
-                    Response.Redirect("~/Views/UpdateProfilePage.aspx");
+                    //Response.Redirect("~/Views/UpdateProfilePage.aspx");
+                    ErrorMsg.ForeColor = Color.Green;       
+                    ErrorMsg.Text = response.Message;
                 }
             }
             else
